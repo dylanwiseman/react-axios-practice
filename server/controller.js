@@ -21,4 +21,15 @@ module.exports = {
     data.push(newUser);
     res.status(200).send(data);
   },
+  editUser: (req, res) => {
+    console.log(req.body);
+    data[req.body.index].name.first = req.body.firstName;
+    data[req.body.index].name.last = req.body.lastName;
+    data[req.body.index].city = req.body.city;
+    data[req.body.index].country = req.body.country;
+    data[req.body.index].title = req.body.title;
+    data[req.body.index].employer = req.body.employer;
+    data[req.body.index].favoriteMovies = req.body.movies.split(",");
+    res.status(200).send(data);
+  },
 };
